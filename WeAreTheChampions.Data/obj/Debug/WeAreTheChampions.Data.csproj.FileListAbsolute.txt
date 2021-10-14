@@ -1,0 +1,14 @@
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\bin\Debug\WeAreTheChampions.Data.dll.config
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\bin\Debug\WeAreTheChampions.Data.dll
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\bin\Debug\WeAreTheChampions.Data.pdb
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\bin\Debug\EntityFramework.dll
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\bin\Debug\EntityFramework.xml
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\obj\Debug\WeAreTheChampions.Data.csproj.AssemblyReference.cache
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\obj\Debug\WeAreTheChampions.Data.csproj.CoreCompileInputs.cache
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\obj\Debug\WeAreTheChampions.Data.csproj.CopyComplete
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\obj\Debug\WeAreTheChampions.Data.dll
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\obj\Debug\WeAreTheChampions.Data.pdb
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\obj\Debug\WeAreTheChampions.Data.Migrations.InitialCatalog.resources
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions.Data\obj\Debug\WeAreTheChampions.Data.csproj.GenerateResource.cache

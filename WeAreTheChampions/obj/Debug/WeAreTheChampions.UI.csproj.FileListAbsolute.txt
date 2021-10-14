@@ -1,0 +1,4 @@
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions\obj\Debug\WeAreTheChampions.UI.csproj.AssemblyReference.cache
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions\obj\Debug\WeAreTheChampions.Properties.Resources.resources
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions\obj\Debug\WeAreTheChampions.UI.csproj.GenerateResource.cache
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions\obj\Debug\WeAreTheChampions.UI.csproj.CoreCompileInputs.cache
