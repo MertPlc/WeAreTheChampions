@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace WeAreTheChampions.Data
 {
-    public class Team
+    public enum Result
     {
-        public int Id { get; set; }
+        Berabere = 0,
 
-        public string TeamName { get; set; }
+        Team1Kazandi = 1,
 
-        public ICollection<Player> Players { get; set; }
+        Team2Kazandi = 2
     }
 }
