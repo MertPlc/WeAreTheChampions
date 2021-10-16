@@ -10,6 +10,7 @@ namespace WeAreTheChampions.Data
     public class Player
     {
         public int Id { get; set; }
+
         [Required, MaxLength(50)]
         public string PlayerName { get; set; }
 

@@ -13,9 +13,9 @@ namespace WeAreTheChampions.Data
 
         public DateTime? MatchTime { get; set; }
 
-        public byte? Score1 { get; set; }
+        public int? Score1 { get; set; }
 
-        public byte? Score2 { get; set; }
+        public int? Score2 { get; set; }
 
         public Result? ResultId { get; set; }
 
