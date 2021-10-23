@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WeAreTheChampions.Data;
 
 namespace WeAreTheChampions
 {
     public partial class Players : Form
     {
-        public Players()
+        private readonly WAChampionsContext db;
+
+        public Players(WAChampionsContext db)
         {
+            this.db = db;
             InitializeComponent();
         }
     }
