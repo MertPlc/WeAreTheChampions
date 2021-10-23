@@ -74,6 +74,7 @@ namespace WeAreTheChampions
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -83,6 +84,7 @@ namespace WeAreTheChampions
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cboPlayerTeams
             // 
@@ -92,6 +94,7 @@ namespace WeAreTheChampions
             this.cboPlayerTeams.Name = "cboPlayerTeams";
             this.cboPlayerTeams.Size = new System.Drawing.Size(268, 28);
             this.cboPlayerTeams.TabIndex = 3;
+            this.cboPlayerTeams.SelectedIndexChanged += new System.EventHandler(this.cboPlayerTeams_SelectedIndexChanged);
             // 
             // txtPlayerName
             // 
@@ -139,6 +142,7 @@ namespace WeAreTheChampions
             this.cboTeams.Name = "cboTeams";
             this.cboTeams.Size = new System.Drawing.Size(268, 28);
             this.cboTeams.TabIndex = 1;
+            this.cboTeams.SelectedIndexChanged += new System.EventHandler(this.cboTeams_SelectedIndexChanged);
             // 
             // label3
             // 
