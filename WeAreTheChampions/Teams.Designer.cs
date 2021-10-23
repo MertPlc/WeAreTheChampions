@@ -30,21 +30,21 @@ namespace WeAreTheChampions
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvTeams = new System.Windows.Forms.DataGridView();
-            this.btnTeamDelete = new System.Windows.Forms.Button();
-            this.btnTeamAdd = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTeamName = new System.Windows.Forms.TextBox();
-            this.dgvColors = new System.Windows.Forms.DataGridView();
+            this.lblColor2 = new System.Windows.Forms.Label();
             this.lblColor1 = new System.Windows.Forms.Label();
+            this.dgvColors = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTeamName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnTeamAdd = new System.Windows.Forms.Button();
+            this.dgvTeams = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Color1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Color2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblColor2 = new System.Windows.Forms.Label();
+            this.btnTeamDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,6 +64,75 @@ namespace WeAreTheChampions
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Teams Informations";
+            // 
+            // lblColor2
+            // 
+            this.lblColor2.BackColor = System.Drawing.Color.White;
+            this.lblColor2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblColor2.Location = new System.Drawing.Point(580, 25);
+            this.lblColor2.Name = "lblColor2";
+            this.lblColor2.Size = new System.Drawing.Size(46, 171);
+            this.lblColor2.TabIndex = 8;
+            // 
+            // lblColor1
+            // 
+            this.lblColor1.BackColor = System.Drawing.Color.White;
+            this.lblColor1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblColor1.Location = new System.Drawing.Point(531, 25);
+            this.lblColor1.Name = "lblColor1";
+            this.lblColor1.Size = new System.Drawing.Size(46, 171);
+            this.lblColor1.TabIndex = 7;
+            this.lblColor1.Click += new System.EventHandler(this.lblColor1_Click);
+            // 
+            // dgvColors
+            // 
+            this.dgvColors.AllowUserToAddRows = false;
+            this.dgvColors.AllowUserToDeleteRows = false;
+            this.dgvColors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvColors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvColors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvColors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dgvColors.Location = new System.Drawing.Point(302, 25);
+            this.dgvColors.Name = "dgvColors";
+            this.dgvColors.ReadOnly = true;
+            this.dgvColors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvColors.Size = new System.Drawing.Size(223, 171);
+            this.dgvColors.TabIndex = 6;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Colors";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // txtTeamName
+            // 
+            this.txtTeamName.Location = new System.Drawing.Point(108, 34);
+            this.txtTeamName.Name = "txtTeamName";
+            this.txtTeamName.Size = new System.Drawing.Size(188, 26);
+            this.txtTeamName.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Team Name:";
+            // 
+            // btnTeamAdd
+            // 
+            this.btnTeamAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTeamAdd.Location = new System.Drawing.Point(6, 202);
+            this.btnTeamAdd.Name = "btnTeamAdd";
+            this.btnTeamAdd.Size = new System.Drawing.Size(620, 41);
+            this.btnTeamAdd.TabIndex = 3;
+            this.btnTeamAdd.Text = "Add Team";
+            this.btnTeamAdd.UseVisualStyleBackColor = true;
+            this.btnTeamAdd.Click += new System.EventHandler(this.btnTeamAdd_Click);
             // 
             // dgvTeams
             // 
@@ -85,75 +154,6 @@ namespace WeAreTheChampions
             this.dgvTeams.Size = new System.Drawing.Size(632, 187);
             this.dgvTeams.TabIndex = 1;
             // 
-            // btnTeamDelete
-            // 
-            this.btnTeamDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTeamDelete.Location = new System.Drawing.Point(13, 462);
-            this.btnTeamDelete.Name = "btnTeamDelete";
-            this.btnTeamDelete.Size = new System.Drawing.Size(632, 41);
-            this.btnTeamDelete.TabIndex = 2;
-            this.btnTeamDelete.Text = "Team Delete";
-            this.btnTeamDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnTeamAdd
-            // 
-            this.btnTeamAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTeamAdd.Location = new System.Drawing.Point(6, 202);
-            this.btnTeamAdd.Name = "btnTeamAdd";
-            this.btnTeamAdd.Size = new System.Drawing.Size(620, 41);
-            this.btnTeamAdd.TabIndex = 3;
-            this.btnTeamAdd.Text = "Team Add";
-            this.btnTeamAdd.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Team Name:";
-            // 
-            // txtTeamName
-            // 
-            this.txtTeamName.Location = new System.Drawing.Point(108, 34);
-            this.txtTeamName.Name = "txtTeamName";
-            this.txtTeamName.Size = new System.Drawing.Size(188, 26);
-            this.txtTeamName.TabIndex = 5;
-            // 
-            // dgvColors
-            // 
-            this.dgvColors.AllowUserToAddRows = false;
-            this.dgvColors.AllowUserToDeleteRows = false;
-            this.dgvColors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvColors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvColors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvColors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dgvColors.Location = new System.Drawing.Point(302, 25);
-            this.dgvColors.Name = "dgvColors";
-            this.dgvColors.ReadOnly = true;
-            this.dgvColors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvColors.Size = new System.Drawing.Size(223, 171);
-            this.dgvColors.TabIndex = 6;
-            // 
-            // lblColor1
-            // 
-            this.lblColor1.BackColor = System.Drawing.Color.White;
-            this.lblColor1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblColor1.Location = new System.Drawing.Point(531, 25);
-            this.lblColor1.Name = "lblColor1";
-            this.lblColor1.Size = new System.Drawing.Size(46, 171);
-            this.lblColor1.TabIndex = 7;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Colors";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // Column2
             // 
             this.Column2.HeaderText = "Team Name";
@@ -172,14 +172,17 @@ namespace WeAreTheChampions
             this.Color2.Name = "Color2";
             this.Color2.ReadOnly = true;
             // 
-            // lblColor2
+            // btnTeamDelete
             // 
-            this.lblColor2.BackColor = System.Drawing.Color.White;
-            this.lblColor2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblColor2.Location = new System.Drawing.Point(580, 25);
-            this.lblColor2.Name = "lblColor2";
-            this.lblColor2.Size = new System.Drawing.Size(46, 171);
-            this.lblColor2.TabIndex = 8;
+            this.btnTeamDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTeamDelete.Location = new System.Drawing.Point(13, 462);
+            this.btnTeamDelete.Name = "btnTeamDelete";
+            this.btnTeamDelete.Size = new System.Drawing.Size(632, 41);
+            this.btnTeamDelete.TabIndex = 2;
+            this.btnTeamDelete.Text = "Delete Team";
+            this.btnTeamDelete.UseVisualStyleBackColor = true;
+            this.btnTeamDelete.Click += new System.EventHandler(this.btnTeamDelete_Click);
             // 
             // Teams
             // 
@@ -199,8 +202,8 @@ namespace WeAreTheChampions
             this.Text = "Teams";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).EndInit();
             this.ResumeLayout(false);
 
         }

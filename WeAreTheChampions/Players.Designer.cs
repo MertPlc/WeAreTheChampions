@@ -216,6 +216,7 @@ namespace WeAreTheChampions
             this.Name = "Players";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Players";
+            this.Load += new System.EventHandler(this.Players_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

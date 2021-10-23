@@ -107,6 +107,7 @@ namespace WeAreTheChampions
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label4
             // 
@@ -144,6 +145,7 @@ namespace WeAreTheChampions
             this.hsbBlue.Name = "hsbBlue";
             this.hsbBlue.Size = new System.Drawing.Size(233, 23);
             this.hsbBlue.TabIndex = 2;
+            this.hsbBlue.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbBlue_Scroll);
             // 
             // hsbGreen
             // 
@@ -151,6 +153,7 @@ namespace WeAreTheChampions
             this.hsbGreen.Name = "hsbGreen";
             this.hsbGreen.Size = new System.Drawing.Size(233, 23);
             this.hsbGreen.TabIndex = 2;
+            this.hsbGreen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbGreen_Scroll);
             // 
             // hsbRed
             // 
@@ -158,6 +161,7 @@ namespace WeAreTheChampions
             this.hsbRed.Name = "hsbRed";
             this.hsbRed.Size = new System.Drawing.Size(233, 23);
             this.hsbRed.TabIndex = 2;
+            this.hsbRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbRed_Scroll);
             // 
             // txtColorName
             // 
@@ -177,9 +181,12 @@ namespace WeAreTheChampions
             // 
             // dgvColors
             // 
+            this.dgvColors.AllowUserToAddRows = false;
+            this.dgvColors.AllowUserToDeleteRows = false;
             this.dgvColors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvColors.Location = new System.Drawing.Point(358, 13);
             this.dgvColors.Name = "dgvColors";
+            this.dgvColors.ReadOnly = true;
             this.dgvColors.Size = new System.Drawing.Size(193, 327);
             this.dgvColors.TabIndex = 1;
             // 

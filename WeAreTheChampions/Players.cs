@@ -22,6 +22,15 @@ namespace WeAreTheChampions
             Relist();
         }
 
+        private void Players_Load(object sender, EventArgs e)
+        {
+            foreach (var item in db.Teams)
+            {
+                cboPlayerTeams.Items.Add(item.TeamName);
+                cboTeams.Items.Add(item.TeamName);
+            }
+        }
+
         private void Relist()
         {
             dgvPlayer.Rows.Clear();
@@ -96,5 +105,7 @@ namespace WeAreTheChampions
                 }
             }
         }
+
+        
     }
 }
