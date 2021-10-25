@@ -62,7 +62,7 @@ namespace WeAreTheChampions
             string playerName = txtPlayerName.Text.Trim();
             var team = cboPlayerTeams.SelectedIndex + 1;
 
-            db.Players.Add(new Player
+            db.Players.Add(new Player()
             {
                 PlayerName = playerName,
                 TeamId = team

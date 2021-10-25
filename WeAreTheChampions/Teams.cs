@@ -21,11 +21,24 @@ namespace WeAreTheChampions
             InitializeComponent();
             Relist();
         }
+        private void Teams_Load(object sender, EventArgs e)
+        {
+            dgvColors.Rows.Clear();
+
+            foreach (var item in db.Colors)
+            {
+                dgvColors.Rows.Add(item.Id, item.ColorName);
+            }
+        }
 
         private void Relist()
         {
-            dgvTeams.DataSource = null;
-            dgvTeams.DataSource = db.Teams.ToList();
+            dgvTeams.Rows.Clear();
+
+            foreach (var item in db.Teams)
+            {
+                dgvTeams.Rows.Add(item.Id, item.TeamName);
+            }
         }
 
         private void btnTeamAdd_Click(object sender, EventArgs e)
@@ -44,7 +57,7 @@ namespace WeAreTheChampions
 
             db.Teams.Add(new Team
             {
-                TeamName = txtTeamName.Text.Trim()
+                TeamName = txtTeamName.Text.Trim(),
             });
 
             db.SaveChanges();
@@ -56,13 +69,14 @@ namespace WeAreTheChampions
             DataGridViewRow row = dgvTeams.SelectedRows[0];
             Team deleted = (Team)row.DataBoundItem;
 
-            if (dgvTeams.Rows.Count > 1)
+            if (dgvTeams.Rows.Count > -1)
             {
-                if (db.Matches.Any(x => x.Team1Id == deleted.Id || db.Matches.Any(y => y.Team2Id == deleted.Id)))
-                {
-                    MessageBox.Show("This team has a match. You should cancel the match.");
-                    return;
-                }
+
+                //if (db.Matches.Any(x => x.Team1Id == deleted.Id || db.Matches.Any(y => y.Team2Id == deleted.Id)))
+                //{
+                //    MessageBox.Show("This team has a match. You should cancel the match.");
+                //    return;
+                //}
 
                 DialogResult dr = MessageBox.Show("Are you sure you want to remove it?", "Delete Permission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 
@@ -75,9 +89,30 @@ namespace WeAreTheChampions
             }       
         }
 
-        private void lblColor1_Click(object sender, EventArgs e)
+        private void lblColor1_MouseClick(object sender, MouseEventArgs e)
         {
+            int id = (int)dgvColors.SelectedRows[0].Cells[0].Value;
 
+            foreach (var item in db.Colors)
+            {
+                if (id == item.Id)
+                {
+                    lblColor1.BackColor = System.Drawing.Color.FromArgb(item.Red, item.Green, item.Blue);
+                }
+            }
+        }
+
+        private void lblColor2_MouseClick(object sender, MouseEventArgs e)
+        {
+            int id = (int)dgvColors.SelectedRows[0].Cells[0].Value;
+
+            foreach (var item in db.Colors)
+            {
+                if (id == item.Id)
+                {
+                    lblColor2.BackColor = System.Drawing.Color.FromArgb(item.Red, item.Green, item.Blue);
+                }
+            }
         }
     }
 }

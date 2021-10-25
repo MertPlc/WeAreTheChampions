@@ -47,7 +47,7 @@ namespace WeAreTheChampions
             // 
             this.cboHomeTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboHomeTeam.FormattingEnabled = true;
-            this.cboHomeTeam.Location = new System.Drawing.Point(12, 106);
+            this.cboHomeTeam.Location = new System.Drawing.Point(12, 135);
             this.cboHomeTeam.Name = "cboHomeTeam";
             this.cboHomeTeam.Size = new System.Drawing.Size(157, 28);
             this.cboHomeTeam.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace WeAreTheChampions
             // 
             this.cboAwayTeams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAwayTeams.FormattingEnabled = true;
-            this.cboAwayTeams.Location = new System.Drawing.Point(476, 106);
+            this.cboAwayTeams.Location = new System.Drawing.Point(476, 135);
             this.cboAwayTeams.Name = "cboAwayTeams";
             this.cboAwayTeams.Size = new System.Drawing.Size(157, 28);
             this.cboAwayTeams.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace WeAreTheChampions
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 83);
+            this.label1.Location = new System.Drawing.Point(34, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 20);
             this.label1.TabIndex = 3;
@@ -82,7 +82,7 @@ namespace WeAreTheChampions
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(507, 83);
+            this.label2.Location = new System.Drawing.Point(507, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 4;
