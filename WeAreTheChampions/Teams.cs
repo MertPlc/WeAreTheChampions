@@ -66,27 +66,28 @@ namespace WeAreTheChampions
 
         private void btnTeamDelete_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvTeams.SelectedRows[0];
-            Team deleted = (Team)row.DataBoundItem;
+            //DataGridViewRow row = dgvTeams.SelectedRows[0];
+            //Team deleted = (Team)row.DataBoundItem;
 
-            if (dgvTeams.Rows.Count > -1)
-            {
 
-                //if (db.Matches.Any(x => x.Team1Id == deleted.Id || db.Matches.Any(y => y.Team2Id == deleted.Id)))
-                //{
-                //    MessageBox.Show("This team has a match. You should cancel the match.");
-                //    return;
-                //}
+            //if (deleted.Players.Count > 0)
+            //{
 
-                DialogResult dr = MessageBox.Show("Are you sure you want to remove it?", "Delete Permission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            //    if (db.Matches.Any(x => x.Team1Id == deleted.Id || db.Matches.Any(y => y.Team2Id == deleted.Id)))
+            //    {
+            //        MessageBox.Show("This team has a match. You should cancel the match.");
+            //        return;
+            //    }
 
-                if (dr == DialogResult.Yes)
-                {
-                    db.Teams.Remove(deleted);
-                    db.SaveChanges();
-                    Relist();
-                }
-            }       
+            //    DialogResult dr = MessageBox.Show("Are you sure you want to remove it?", "Delete Permission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+            //    if (dr == DialogResult.Yes)
+            //    {
+            //        db.Teams.Remove(deleted);
+            //        db.SaveChanges();
+            //        Relist();
+            //    }
+            //}
         }
 
         private void lblColor1_MouseClick(object sender, MouseEventArgs e)

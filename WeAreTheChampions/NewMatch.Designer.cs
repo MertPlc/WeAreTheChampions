@@ -45,27 +45,31 @@ namespace WeAreTheChampions
             // 
             // cboHomeTeam
             // 
+            this.cboHomeTeam.DisplayMember = "TeamName";
             this.cboHomeTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboHomeTeam.FormattingEnabled = true;
-            this.cboHomeTeam.Location = new System.Drawing.Point(12, 135);
+            this.cboHomeTeam.Location = new System.Drawing.Point(3, 104);
             this.cboHomeTeam.Name = "cboHomeTeam";
             this.cboHomeTeam.Size = new System.Drawing.Size(157, 28);
             this.cboHomeTeam.TabIndex = 0;
+            this.cboHomeTeam.ValueMember = "Id";
             // 
             // cboAwayTeams
             // 
+            this.cboAwayTeams.DisplayMember = "TeamName";
             this.cboAwayTeams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAwayTeams.FormattingEnabled = true;
-            this.cboAwayTeams.Location = new System.Drawing.Point(476, 135);
+            this.cboAwayTeams.Location = new System.Drawing.Point(215, 104);
             this.cboAwayTeams.Name = "cboAwayTeams";
             this.cboAwayTeams.Size = new System.Drawing.Size(157, 28);
             this.cboAwayTeams.TabIndex = 1;
+            this.cboAwayTeams.ValueMember = "Id";
             // 
             // dtpDate
             // 
             this.dtpDate.CustomFormat = "ddMMMMyyyy | hh:mm";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(215, 65);
+            this.dtpDate.Location = new System.Drawing.Point(76, 42);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(222, 26);
             this.dtpDate.TabIndex = 2;
@@ -73,34 +77,34 @@ namespace WeAreTheChampions
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 112);
+            this.label1.Location = new System.Drawing.Point(25, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
+            this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Home Teams";
+            this.label1.Text = "Home Team";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(507, 112);
+            this.label2.Location = new System.Drawing.Point(246, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Away Teams";
+            this.label2.Text = "Away Team";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(246, 32);
+            this.label3.Location = new System.Drawing.Point(107, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 20);
+            this.label3.Size = new System.Drawing.Size(145, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Match Day and Hours";
+            this.label3.Text = "Match Date && Time";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(301, 114);
+            this.label4.Location = new System.Drawing.Point(163, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 6;
@@ -108,32 +112,35 @@ namespace WeAreTheChampions
             // 
             // nudHomeTeamScore
             // 
-            this.nudHomeTeamScore.Location = new System.Drawing.Point(215, 137);
+            this.nudHomeTeamScore.Location = new System.Drawing.Point(104, 157);
             this.nudHomeTeamScore.Name = "nudHomeTeamScore";
             this.nudHomeTeamScore.Size = new System.Drawing.Size(56, 26);
             this.nudHomeTeamScore.TabIndex = 7;
             // 
             // nudAwayTeamScore
             // 
-            this.nudAwayTeamScore.Location = new System.Drawing.Point(381, 137);
+            this.nudAwayTeamScore.Location = new System.Drawing.Point(215, 157);
             this.nudAwayTeamScore.Name = "nudAwayTeamScore";
             this.nudAwayTeamScore.Size = new System.Drawing.Size(56, 26);
             this.nudAwayTeamScore.TabIndex = 8;
             // 
             // btnAddMatch
             // 
-            this.btnAddMatch.Location = new System.Drawing.Point(215, 232);
+            this.btnAddMatch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddMatch.Location = new System.Drawing.Point(76, 203);
             this.btnAddMatch.Name = "btnAddMatch";
             this.btnAddMatch.Size = new System.Drawing.Size(222, 62);
             this.btnAddMatch.TabIndex = 9;
             this.btnAddMatch.Text = "Match Add";
-            this.btnAddMatch.UseVisualStyleBackColor = true;
+            this.btnAddMatch.UseVisualStyleBackColor = false;
+            this.btnAddMatch.Click += new System.EventHandler(this.btnAddMatch_Click);
             // 
             // New_Match
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 337);
+            this.ClientSize = new System.Drawing.Size(375, 282);
             this.Controls.Add(this.btnAddMatch);
             this.Controls.Add(this.nudAwayTeamScore);
             this.Controls.Add(this.nudHomeTeamScore);
@@ -152,6 +159,7 @@ namespace WeAreTheChampions
             this.Name = "New_Match";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Match";
+            this.Load += new System.EventHandler(this.New_Match_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudHomeTeamScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAwayTeamScore)).EndInit();
             this.ResumeLayout(false);

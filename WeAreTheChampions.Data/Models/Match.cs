@@ -17,6 +17,8 @@ namespace WeAreTheChampions.Data
 
         public int? Score2 { get; set; }
 
+        public int Scores { get; set; }
+
         public Result? ResultId { get; set; }
 
 

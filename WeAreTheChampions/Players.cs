@@ -74,8 +74,8 @@ namespace WeAreTheChampions
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvPlayer.SelectedRows[0];
-            Player deleted = (Player)row.DataBoundItem;
+            string selected = dgvPlayer.CurrentRow.Cells[0].Value.ToString();
+            var deleted = db.Players.Where(x => x.PlayerName == selected).FirstOrDefault();
             db.Players.Remove(deleted);
             db.SaveChanges();
             Relist();

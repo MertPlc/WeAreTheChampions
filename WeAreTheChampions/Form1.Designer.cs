@@ -79,14 +79,15 @@ namespace WeAreTheChampions
             // btnNewMatch
             // 
             this.btnNewMatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNewMatch.BackColor = System.Drawing.Color.Green;
             this.btnNewMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnNewMatch.Location = new System.Drawing.Point(13, 466);
             this.btnNewMatch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNewMatch.Name = "btnNewMatch";
             this.btnNewMatch.Size = new System.Drawing.Size(216, 57);
             this.btnNewMatch.TabIndex = 1;
-            this.btnNewMatch.Text = "New Match";
-            this.btnNewMatch.UseVisualStyleBackColor = true;
+            this.btnNewMatch.Text = "+ New Match";
+            this.btnNewMatch.UseVisualStyleBackColor = false;
             this.btnNewMatch.Click += new System.EventHandler(this.btnNewMatch_Click);
             // 
             // dgvScore
@@ -104,25 +105,29 @@ namespace WeAreTheChampions
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(555, 466);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(167, 57);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnEdit.BackColor = System.Drawing.Color.Gold;
+            this.btnEdit.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnEdit.Location = new System.Drawing.Point(730, 466);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(167, 57);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 

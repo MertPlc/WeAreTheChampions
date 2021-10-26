@@ -51,9 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202110251859077_InitialCatalog.cs" />
-    <Compile Include="Migrations\202110251859077_InitialCatalog.designer.cs">
-      <DependentUpon>202110251859077_InitialCatalog.cs</DependentUpon>
+    <Compile Include="Migrations\202110261956056_InitialCatalog.cs" />
+    <Compile Include="Migrations\202110261956056_InitialCatalog.designer.cs">
+      <DependentUpon>202110261956056_InitialCatalog.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Color.cs" />
@@ -69,8 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202110251859077_InitialCatalog.resx">
-      <DependentUpon>202110251859077_InitialCatalog.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202110261956056_InitialCatalog.resx">
+      <DependentUpon>202110261956056_InitialCatalog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

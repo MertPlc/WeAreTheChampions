@@ -96,7 +96,5 @@ namespace WeAreTheChampions
             db.SaveChanges();
             Relist();
         }
-
-        
     }
 }
