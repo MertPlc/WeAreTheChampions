@@ -14,8 +14,8 @@ namespace WeAreTheChampions.Data
         {
             Players = new HashSet<Player>();
             Colors = new HashSet<Color>();
-            AwayMatches = new HashSet<Match>();
             HomeMatches = new HashSet<Match>();
+            AwayMatches = new HashSet<Match>();
         }
 
         public int Id { get; set; }
@@ -30,5 +30,9 @@ namespace WeAreTheChampions.Data
         public virtual ICollection<Match> AwayMatches { get; set; }
 
         public virtual ICollection<Match> HomeMatches { get; set; }
+        public override string ToString()
+        {
+            return TeamName;
+        }
     }
 }

@@ -39,3 +39,4 @@ C:\Users\mert_\Source\Repos\WeAreTheChampions\WeAreTheChampions\obj\Debug\WeAreT
 C:\Users\mert_\Source\Repos\WeAreTheChampions\WeAreTheChampions\bin\Debug\WeAreTheChampions.Data.dll
 C:\Users\mert_\Source\Repos\WeAreTheChampions\WeAreTheChampions\bin\Debug\WeAreTheChampions.Data.pdb
 C:\Users\mert_\Source\Repos\WeAreTheChampions\WeAreTheChampions\bin\Debug\WeAreTheChampions.Data.dll.config
+C:\Users\mert_\source\repos\WeAreTheChampions\WeAreTheChampions\obj\Debug\WeAreTheChampions.EditMatch.resources

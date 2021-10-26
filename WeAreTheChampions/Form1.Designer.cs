@@ -35,6 +35,12 @@ namespace WeAreTheChampions
             this.tsmiPlayers = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewMatch = new System.Windows.Forms.Button();
             this.dgvScore = new System.Windows.Forms.DataGridView();
+            this.MatchId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Team1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Team2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -92,15 +98,73 @@ namespace WeAreTheChampions
             // 
             // dgvScore
             // 
+            this.dgvScore.AllowUserToAddRows = false;
+            this.dgvScore.AllowUserToDeleteRows = false;
             this.dgvScore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvScore.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvScore.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvScore.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvScore.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MatchId,
+            this.Team1,
+            this.Team2,
+            this.Date,
+            this.Time,
+            this.Result});
             this.dgvScore.Location = new System.Drawing.Point(13, 36);
             this.dgvScore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvScore.MultiSelect = false;
             this.dgvScore.Name = "dgvScore";
+            this.dgvScore.ReadOnly = true;
+            this.dgvScore.RowHeadersVisible = false;
+            this.dgvScore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvScore.Size = new System.Drawing.Size(884, 420);
             this.dgvScore.TabIndex = 2;
+            // 
+            // MatchId
+            // 
+            this.MatchId.DataPropertyName = "MatchId";
+            this.MatchId.HeaderText = "MatchId";
+            this.MatchId.Name = "MatchId";
+            this.MatchId.ReadOnly = true;
+            // 
+            // Team1
+            // 
+            this.Team1.DataPropertyName = "Team1";
+            this.Team1.HeaderText = "Team1";
+            this.Team1.Name = "Team1";
+            this.Team1.ReadOnly = true;
+            // 
+            // Team2
+            // 
+            this.Team2.DataPropertyName = "Team2";
+            this.Team2.HeaderText = "Team2";
+            this.Team2.Name = "Team2";
+            this.Team2.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Time
+            // 
+            this.Time.DataPropertyName = "Time";
+            this.Time.HeaderText = "Time";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            // 
+            // Result
+            // 
+            this.Result.DataPropertyName = "Score";
+            this.Result.HeaderText = "Result";
+            this.Result.Name = "Result";
+            this.Result.ReadOnly = true;
             // 
             // btnDelete
             // 
@@ -128,6 +192,7 @@ namespace WeAreTheChampions
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // Form1
             // 
@@ -166,5 +231,11 @@ namespace WeAreTheChampions
         private System.Windows.Forms.DataGridView dgvScore;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatchId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Team1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Team2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Result;
     }
 }

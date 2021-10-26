@@ -55,6 +55,7 @@ namespace WeAreTheChampions
             this.dgvColors.AllowUserToDeleteRows = false;
             this.dgvColors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvColors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvColors.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvColors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvColors.Location = new System.Drawing.Point(12, 21);
             this.dgvColors.Name = "dgvColors";

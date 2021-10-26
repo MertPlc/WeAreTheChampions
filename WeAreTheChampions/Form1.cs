@@ -17,22 +17,56 @@ namespace WeAreTheChampions
         public Form1()
         {
             InitializeComponent();
-            Relist();
+            dgvScore.AutoGenerateColumns = false;
+            ListMatches();
+            ShowResults();
         }
 
-        private void Relist()
+        private void ShowResults()
         {
-            dgvScore.Rows.Clear();
-
-            foreach (var item in db.Matches)
+            var matches = db.Matches.ToList();
+            foreach (Match item in matches)
             {
-                dgvScore.Rows.Add(item.Id, item.Team1, item.Team2, item.MatchTime, item.Score1, item.Score2, item.ResultId);
+                if (item.Score1 > item.Score2)
+                {
+                    item.ResultId = Data.Result.Team1Win;
+                }
+                else if (item.Score1 < item.Score2)
+                {
+                    item.ResultId = Data.Result.Team2Win;
+                }
+                else if (item.Score1 == item.Score2)
+                {
+                    item.ResultId = Data.Result.Draw;
+                }
+                else
+                {
+                    item.ResultId = null;
+                }
+                db.SaveChanges();
             }
+        }
+
+        private void ListMatches()
+        {
+            var matches = db.Matches.ToList().Select(
+                x => new
+                {
+                    MatchId = x.Id,
+                    Team1 = x.Team1,
+                    Team2 = x.Team2,
+                    Date = x.MatchTime?.ToShortDateString(),
+                    Time = x.MatchTime?.ToShortTimeString(),
+                    Score = x.Score1 + " - " + x.Score2,
+                    MatchResult = x.ResultId
+                });
+            dgvScore.DataSource = matches.ToList();
         }
 
         private void btnNewMatch_Click(object sender, EventArgs e)
         {
             new New_Match(db).ShowDialog();
+            ListMatches();
         }
 
         private void tsmiTeams_Click(object sender, EventArgs e)
@@ -52,20 +86,35 @@ namespace WeAreTheChampions
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvScore.Rows.Count > 1)
+            if (dgvScore.SelectedRows.Count > 0)
             {
                 DialogResult dr = MessageBox.Show("Are you sure you want to remove it?", "Delete Permission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 
                 if (dr == DialogResult.Yes)
                 {
-                    DataGridViewRow row = dgvScore.SelectedRows[0];
-                    Team deleted = (Team)row.DataBoundItem;
-                    db.Teams.Remove(deleted);
+                    int matchId = (int)dgvScore.SelectedRows[0].Cells[0].Value;
+                    Match match = db.Matches.ToList().FirstOrDefault(x => x.Id == matchId);
+
+                    db.Matches.Remove(match);
                     db.SaveChanges();
                 }
             }
 
-            Relist();
+            ListMatches();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvScore.SelectedRows.Count == 0)
+            {
+                return;
+            }
+
+            int matchId2 = (int)dgvScore.SelectedRows[0].Cells[0].Value;
+            Match match2 = db.Matches.ToList().FirstOrDefault(x => x.Id == matchId2);
+
+            new EditMatch(db, match2).ShowDialog();
+            ListMatches();
         }
     }
 }

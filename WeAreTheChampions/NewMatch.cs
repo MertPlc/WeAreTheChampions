@@ -14,8 +14,6 @@ namespace WeAreTheChampions
     public partial class New_Match : Form
     {
         private readonly WAChampionsContext db;
-        Team Home;
-        Team Away;
 
         public New_Match(WAChampionsContext db)
         {
@@ -25,66 +23,36 @@ namespace WeAreTheChampions
 
         private void btnAddMatch_Click(object sender, EventArgs e)
         {
-            int score = 0;
-            int home = 0;
-            int away = 0;
-
             if (cboHomeTeam.SelectedItem == cboAwayTeams.SelectedItem)
             {
                 MessageBox.Show("Two same teams can't match each other");
             }
             else
             {
-                foreach (var item in db.Teams)
-                {
-                    if (cboHomeTeam.Text == item.TeamName)
-                    {
-                        home = item.Id;
-                    }
-                    else
-                    {
-                        away = item.Id;
-                    }
-                }
-                if (nudHomeTeamScore.Value == nudAwayTeamScore.Value)
-                {
-                    score = 0;
-                }
-                else if (nudHomeTeamScore.Value > nudAwayTeamScore.Value)
-                {
-                    score = 1;
-                }
-                else if (nudHomeTeamScore.Value < nudAwayTeamScore.Value)
-                {
-                    score = 2;
-                }
+                DateTime date = new DateTime((int)nudYear.Value, (int)nudMonth.Value, (int)nudDay.Value, (int)nudHour.Value, (int)nudMinute.Value, 0);
 
-                Match match = new Match();
-                match.Score1 = (int)nudHomeTeamScore.Value;
-                match.Score2 = (int)nudAwayTeamScore.Value;
-                match.Scores = score;
-                match.Team1Id = home;
-                match.Team1 = Home;
-                match.Team2Id = away;
-                match.Team2 = Away;
-                match.MatchTime = dtpDate.Value;
-
-                db.Matches.Add(match);
+                if (date < DateTime.Now)
+                {
+                    MessageBox.Show("Invalid date!");
+                    return;
+                }
+                db.Matches.Add(new Match()
+                {
+                    MatchTime = date,
+                    Team1 = (Team)cboHomeTeam.SelectedItem,
+                    Team2 = (Team)cboAwayTeams.SelectedItem
+                });
                 db.SaveChanges();
-                ShowResults();
                 Close();
             }
-        }
-
-        private void ShowResults()
-        {
-            
         }
 
         private void New_Match_Load(object sender, EventArgs e)
         {
             cboHomeTeam.DataSource = db.Teams.ToList();
+            cboAwayTeams.DataSource = db.Teams.ToList();
             cboHomeTeam.SelectedIndex = -1;
+            cboAwayTeams.SelectedIndex = -1;
         }
     }
 }

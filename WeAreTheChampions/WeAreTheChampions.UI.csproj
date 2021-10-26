@@ -62,6 +62,12 @@
     <Compile Include="Colors.Designer.cs">
       <DependentUpon>Colors.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditMatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMatch.Designer.cs">
+      <DependentUpon>EditMatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="Colors.resx">
       <DependentUpon>Colors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMatch.resx">
+      <DependentUpon>EditMatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
