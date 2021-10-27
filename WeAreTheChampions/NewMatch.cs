@@ -39,6 +39,8 @@ namespace WeAreTheChampions
                 db.Matches.Add(new Match()
                 {
                     MatchTime = date,
+                    Score1 = (int)nudHomeTeamScore.Value,
+                    Score2 = (int)nudAwayTeamScore.Value,
                     Team1 = (Team)cboHomeTeam.SelectedItem,
                     Team2 = (Team)cboAwayTeams.SelectedItem
                 });

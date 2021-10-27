@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,11 @@ namespace WeAreTheChampions.Data
 
         public DateTime? MatchTime { get; set; }
 
-        public int? Score1 { get; set; }
+        [Required]
+        public int Score1 { get; set; }
 
-        public int? Score2 { get; set; }
+        [Required]
+        public int Score2 { get; set; }
 
         public Result? ResultId { get; set; }
 

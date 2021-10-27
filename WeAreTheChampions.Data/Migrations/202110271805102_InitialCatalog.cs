@@ -34,8 +34,8 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         MatchTime = c.DateTime(),
-                        Score1 = c.Int(),
-                        Score2 = c.Int(),
+                        Score1 = c.Int(nullable: false),
+                        Score2 = c.Int(nullable: false),
                         ResultId = c.Int(),
                         Team1Id = c.Int(nullable: false),
                         Team2Id = c.Int(nullable: false),

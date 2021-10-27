@@ -35,14 +35,15 @@ namespace WeAreTheChampions
             this.tsmiPlayers = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewMatch = new System.Windows.Forms.Button();
             this.dgvScore = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.MatchId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Team1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Team2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Result = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.MatchResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScore)).BeginInit();
             this.SuspendLayout();
@@ -113,7 +114,8 @@ namespace WeAreTheChampions
             this.Team2,
             this.Date,
             this.Time,
-            this.Result});
+            this.Result,
+            this.MatchResult});
             this.dgvScore.Location = new System.Drawing.Point(13, 36);
             this.dgvScore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvScore.MultiSelect = false;
@@ -123,6 +125,34 @@ namespace WeAreTheChampions
             this.dgvScore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvScore.Size = new System.Drawing.Size(884, 420);
             this.dgvScore.TabIndex = 2;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(555, 466);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(167, 57);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnEdit.BackColor = System.Drawing.Color.Gold;
+            this.btnEdit.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnEdit.Location = new System.Drawing.Point(730, 466);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(167, 57);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // MatchId
             // 
@@ -166,33 +196,12 @@ namespace WeAreTheChampions
             this.Result.Name = "Result";
             this.Result.ReadOnly = true;
             // 
-            // btnDelete
+            // MatchResult
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(555, 466);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(167, 57);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEdit.BackColor = System.Drawing.Color.Gold;
-            this.btnEdit.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnEdit.Location = new System.Drawing.Point(730, 466);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(167, 57);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.MatchResult.DataPropertyName = "MatchResult";
+            this.MatchResult.HeaderText = "Match Result";
+            this.MatchResult.Name = "MatchResult";
+            this.MatchResult.ReadOnly = true;
             // 
             // Form1
             // 
@@ -237,5 +246,6 @@ namespace WeAreTheChampions
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
         private System.Windows.Forms.DataGridViewTextBoxColumn Result;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatchResult;
     }
 }

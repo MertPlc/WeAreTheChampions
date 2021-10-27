@@ -27,17 +27,17 @@ namespace WeAreTheChampions
             var matches = db.Matches.ToList();
             foreach (Match item in matches)
             {
-                if (item.Score1 > item.Score2)
+                if (item.Score1 == item.Score2)
                 {
-                    item.ResultId = Data.Result.Team1Win;
+                    item.ResultId = Data.Result.Draw;
                 }
                 else if (item.Score1 < item.Score2)
                 {
                     item.ResultId = Data.Result.Team2Win;
                 }
-                else if (item.Score1 == item.Score2)
+                else if (item.Score1 > item.Score2)
                 {
-                    item.ResultId = Data.Result.Draw;
+                    item.ResultId = Data.Result.Team1Win;
                 }
                 else
                 {
