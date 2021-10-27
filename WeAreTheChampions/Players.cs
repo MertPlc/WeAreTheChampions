@@ -20,6 +20,13 @@ namespace WeAreTheChampions
             this.db = db;
             InitializeComponent();
             Relist();
+            FormReset();
+        }
+
+        private void FormReset()
+        {
+            txtPlayerName.Clear();
+            cboPlayerTeams.SelectedIndex = -1;
         }
 
         private void Players_Load(object sender, EventArgs e)
@@ -47,7 +54,7 @@ namespace WeAreTheChampions
 
             foreach (var item in db.Teams)
             {
-                cboPlayerTeams.Items.Add(item.TeamName);
+                cboTeams.Items.Add(item.TeamName);
             }
         }
 
@@ -70,15 +77,22 @@ namespace WeAreTheChampions
 
             db.SaveChanges();
             Relist();
+            FormReset();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string selected = dgvPlayer.CurrentRow.Cells[0].Value.ToString();
-            var deleted = db.Players.Where(x => x.PlayerName == selected).FirstOrDefault();
-            db.Players.Remove(deleted);
-            db.SaveChanges();
-            Relist();
+            
+            if (dgvPlayer.Rows.Count > 0)
+            {
+                string selected = dgvPlayer.CurrentRow.Cells[0].Value.ToString();
+                var deleted = db.Players.Where(x => x.PlayerName == selected).FirstOrDefault();
+                db.Players.Remove(deleted);
+                db.SaveChanges();
+                Relist();
+                FormReset();
+            }
+            
         }
 
         private void cboTeams_SelectedIndexChanged(object sender, EventArgs e)

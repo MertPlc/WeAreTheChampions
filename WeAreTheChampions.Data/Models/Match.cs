@@ -22,10 +22,11 @@ namespace WeAreTheChampions.Data
 
         public Result? ResultId { get; set; }
 
-
+        [Required]
         public int Team1Id { get; set; }
         public virtual Team Team1 { get; set; }
 
+        [Required]
         public int Team2Id { get; set; }
         public virtual Team Team2 { get; set; }
     }

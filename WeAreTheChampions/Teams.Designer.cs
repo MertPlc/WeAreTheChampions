@@ -39,9 +39,9 @@ namespace WeAreTheChampions
             this.label1 = new System.Windows.Forms.Label();
             this.btnTeamAdd = new System.Windows.Forms.Button();
             this.btnTeamDelete = new System.Windows.Forms.Button();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.I = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvTeams = new System.Windows.Forms.DataGridView();
+            this.I = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
@@ -165,19 +165,6 @@ namespace WeAreTheChampions
             this.btnTeamDelete.UseVisualStyleBackColor = false;
             this.btnTeamDelete.Click += new System.EventHandler(this.btnTeamDelete_Click);
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Team Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 629;
-            // 
-            // I
-            // 
-            this.I.HeaderText = "Id";
-            this.I.Name = "I";
-            this.I.ReadOnly = true;
-            // 
             // dgvTeams
             // 
             this.dgvTeams.AllowUserToAddRows = false;
@@ -190,12 +177,29 @@ namespace WeAreTheChampions
             this.I,
             this.Column2});
             this.dgvTeams.Location = new System.Drawing.Point(13, 269);
+            this.dgvTeams.MultiSelect = false;
             this.dgvTeams.Name = "dgvTeams";
             this.dgvTeams.ReadOnly = true;
             this.dgvTeams.RowHeadersVisible = false;
+            this.dgvTeams.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvTeams.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTeams.Size = new System.Drawing.Size(632, 187);
             this.dgvTeams.TabIndex = 1;
+            // 
+            // I
+            // 
+            this.I.DataPropertyName = "Id";
+            this.I.HeaderText = "Id";
+            this.I.Name = "I";
+            this.I.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TeamName";
+            this.Column2.HeaderText = "Team Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 629;
             // 
             // Teams
             // 
@@ -234,8 +238,8 @@ namespace WeAreTheChampions
         private System.Windows.Forms.Label lblColor2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn I;
         private System.Windows.Forms.DataGridView dgvTeams;
+        private System.Windows.Forms.DataGridViewTextBoxColumn I;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

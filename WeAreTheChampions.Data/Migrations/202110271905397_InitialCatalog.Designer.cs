@@ -13,7 +13,7 @@ namespace WeAreTheChampions.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202110271805102_InitialCatalog"; }
+            get { return "202110271905397_InitialCatalog"; }
         }
         
         string IMigrationMetadata.Source

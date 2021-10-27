@@ -66,28 +66,31 @@ namespace WeAreTheChampions
 
         private void btnTeamDelete_Click(object sender, EventArgs e)
         {
-            //DataGridViewRow row = dgvTeams.SelectedRows[0];
-            //Team deleted = (Team)row.DataBoundItem;
+            if (dgvTeams.Rows.Count > 0)
+            {
+                int id = (int)dgvTeams.CurrentRow.Cells[0].Value;
+                var deleted = db.Teams.Where(x => x.Id == id).FirstOrDefault();
 
+                if (deleted.Players.Count > 0)
+                {
+                    MessageBox.Show("There are players in this team.");
+                    return;
+                }
 
-            //if (deleted.Players.Count > 0)
-            //{
+                if (db.Matches.Any(x => x.Team1Id == deleted.Id || db.Matches.Any(y => y.Team2Id == deleted.Id)))
+                {
+                    MessageBox.Show("This team has a match. You should cancel the match.");
+                }
 
-            //    if (db.Matches.Any(x => x.Team1Id == deleted.Id || db.Matches.Any(y => y.Team2Id == deleted.Id)))
-            //    {
-            //        MessageBox.Show("This team has a match. You should cancel the match.");
-            //        return;
-            //    }
+                DialogResult dr = MessageBox.Show("Are you sure you want to remove it?", "Delete Permission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 
-            //    DialogResult dr = MessageBox.Show("Are you sure you want to remove it?", "Delete Permission", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-
-            //    if (dr == DialogResult.Yes)
-            //    {
-            //        db.Teams.Remove(deleted);
-            //        db.SaveChanges();
-            //        Relist();
-            //    }
-            //}
+                if (dr == DialogResult.Yes)
+                {
+                    db.Teams.Remove(deleted);
+                    db.SaveChanges();
+                    Relist();
+                }
+            }
         }
 
         private void lblColor1_MouseClick(object sender, MouseEventArgs e)
