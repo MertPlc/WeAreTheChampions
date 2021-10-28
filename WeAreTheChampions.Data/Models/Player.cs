@@ -15,6 +15,11 @@ namespace WeAreTheChampions.Data
         public string PlayerName { get; set; }
 
         public int? TeamId { get; set; }
-        public virtual ICollection<Team> Team { get; set; }
+        public virtual Team Team { get; set; }
+
+        public override string ToString()
+        {
+            return PlayerName;
+        }
     }
 }

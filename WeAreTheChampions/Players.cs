@@ -19,107 +19,85 @@ namespace WeAreTheChampions
         {
             this.db = db;
             InitializeComponent();
+            dgvPlayers.AutoGenerateColumns = false;
+            cboTeams.DataSource = db.Teams.ToList();
+            cboTeams.SelectedIndex = -1;
             Relist();
-            FormReset();
-        }
-
-        private void FormReset()
-        {
-            txtPlayerName.Clear();
-            cboPlayerTeams.SelectedIndex = -1;
-        }
-
-        private void Players_Load(object sender, EventArgs e)
-        {
-            foreach (var item in db.Teams)
-            {
-                cboPlayerTeams.Items.Add(item.TeamName);
-                cboTeams.Items.Add(item.TeamName);
-            }
         }
 
         private void Relist()
         {
-            dgvPlayer.Rows.Clear();
-
-            foreach (var item in db.Players)
-            {
-                dgvPlayer.Rows.Add(item.PlayerName);
-            }
-        }
-
-        private void cboPlayerTeams_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cboPlayerTeams.Items.Clear();
-
-            foreach (var item in db.Teams)
-            {
-                cboTeams.Items.Add(item.TeamName);
-            }
+            dgvPlayers.DataSource = null;
+            dgvPlayers.DataSource = db.Players.ToList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtPlayerName.Text == "")
+            Player player;
+
+            if (txtPlayerName.Text.Trim() == "")
             {
                 MessageBox.Show("You must identify the Player Name");
                 return;
             }
-
-            string playerName = txtPlayerName.Text.Trim();
-            var team = cboPlayerTeams.SelectedIndex + 1;
-
-            db.Players.Add(new Player()
+            if (btnAdd.Text == "Add")
             {
-                PlayerName = playerName,
-                TeamId = team
-            });
+                player = new Player();
+                player.PlayerName = txtPlayerName.Text.Trim();
 
+                if (cboTeams.SelectedIndex != -1)
+                {
+                    player.Team = (Team)cboTeams.SelectedItem;
+                }
+
+                db.Players.Add(player);
+            }
+            else if (btnAdd.Text == "Edit Player")
+            {
+                player = (Player)dgvPlayers.SelectedRows[0].DataBoundItem;
+                player.PlayerName = txtPlayerName.Text.Trim();
+
+                if (cboTeams.SelectedIndex != -1)
+                {
+                    player.Team = (Team)cboTeams.SelectedItem;
+                }
+                btnEdit.Visible = true;
+            }
             db.SaveChanges();
+            btnAdd.Text = "Add";
+            txtPlayerName.Clear();
+            cboTeams.SelectedIndex = -1;
             Relist();
-            FormReset();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
-            if (dgvPlayer.Rows.Count > 0)
-            {
-                string selected = dgvPlayer.CurrentRow.Cells[0].Value.ToString();
-                var deleted = db.Players.Where(x => x.PlayerName == selected).FirstOrDefault();
-                db.Players.Remove(deleted);
-                db.SaveChanges();
-                Relist();
-                FormReset();
-            }
-            
+            Player player = (Player)dgvPlayers.SelectedRows[0].DataBoundItem;
+            db.Players.Remove(player);
+            db.SaveChanges();
+            Relist();
         }
 
-        private void cboTeams_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            dgvTeamsFilter.Rows.Clear();
-
-            int id = 0;
-            string team = "";
-
-            foreach (var item in db.Teams)
-            {
-                if (cboTeams.Text == item.TeamName)
-                {
-                    id = item.Id;
-                    team = item.TeamName;
-                }
-            }
-
-            foreach (var item in db.Players)
-            {
-                if (id == item.TeamId)
-                {
-                    dgvTeamsFilter.Rows.Add(item.PlayerName);
-                }
-            }
+            Player player = (Player)dgvPlayers.SelectedRows[0].DataBoundItem;
+            txtPlayerName.Text = player.PlayerName;
+            cboTeams.SelectedItem = player.Team;
+            dgvPlayers.Enabled = false;
+            btnAdd.Text = "Edit Player";
+            btnEdit.Visible = false;
         }
 
-        
+        private void txtTeamName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTeamName.Text.Trim() == "")
+            {
+                Relist();
+            }
+            else
+            {
+                dgvPlayers.DataSource = db.Players.Where(x => x.Team.TeamName.Contains(txtTeamName.Text.Trim())).ToList();
+            }
+        }
     }
 }
