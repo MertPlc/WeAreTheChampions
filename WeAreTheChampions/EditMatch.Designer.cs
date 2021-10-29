@@ -78,7 +78,7 @@ namespace WeAreTheChampions
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(180, 76);
+            this.label7.Location = new System.Drawing.Point(184, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(14, 20);
             this.label7.TabIndex = 86;
@@ -156,7 +156,7 @@ namespace WeAreTheChampions
             // 
             // nudMinute
             // 
-            this.nudMinute.Location = new System.Drawing.Point(201, 70);
+            this.nudMinute.Location = new System.Drawing.Point(205, 70);
             this.nudMinute.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudMinute.Maximum = new decimal(new int[] {
             60,
@@ -169,7 +169,7 @@ namespace WeAreTheChampions
             // 
             // nudHour
             // 
-            this.nudHour.Location = new System.Drawing.Point(137, 70);
+            this.nudHour.Location = new System.Drawing.Point(133, 70);
             this.nudHour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nudHour.Maximum = new decimal(new int[] {
             24,
@@ -269,7 +269,7 @@ namespace WeAreTheChampions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 297);
+            this.ClientSize = new System.Drawing.Size(383, 297);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);

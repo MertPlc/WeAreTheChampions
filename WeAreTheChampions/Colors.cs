@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WeAreTheChampions.Data;
 using Color = WeAreTheChampions.Data.Color;
@@ -20,12 +14,21 @@ namespace WeAreTheChampions
         {
             this.db = db;
             InitializeComponent();
-            Relist(); 
-            this.dgvColors.Columns[0].Visible = false;
-            this.dgvColors.Columns[2].Visible = false;
-            this.dgvColors.Columns[3].Visible = false;
-            this.dgvColors.Columns[4].Visible = false;
+            Relist();
+            FormReset();
             this.dgvColors.Columns[5].Visible = false;
+        }
+
+        private void FormReset()
+        {
+            txtColorName.Clear();
+            gbBackgroundColor.BackColor = default;
+            lblRed.Text = "000";
+            lblGreen.Text = "000";
+            lblBlue.Text = "000";
+            hsbRed.Value = hsbRed.Minimum;
+            hsbGreen.Value = hsbGreen.Minimum;
+            hsbBlue.Value = hsbBlue.Minimum;
         }
 
         private void Relist()
@@ -56,6 +59,11 @@ namespace WeAreTheChampions
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            if (dgvColors.SelectedRows.Count != 1)
+            {
+                return;
+            }
+
             var row = dgvColors.SelectedRows[0];
             Color deleted = (Color)row.DataBoundItem;
             db.Colors.Remove(deleted);
@@ -81,10 +89,17 @@ namespace WeAreTheChampions
 
             db.SaveChanges();
             Relist();
+            FormReset();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            
+            if (dgvColors.SelectedRows.Count != 1)
+            {
+                return;
+            }
+
             int selected = (int)dgvColors.SelectedRows[0].Cells[0].Value;
 
             var update = db.Colors.Find(selected);
@@ -92,9 +107,9 @@ namespace WeAreTheChampions
             update.Red = (byte)hsbRed.Value;
             update.Blue = (byte)hsbBlue.Value;
             update.Green = (byte)hsbGreen.Value;
-
             db.SaveChanges();
             Relist();
+            FormReset();
         }
     }
 }

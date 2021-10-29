@@ -45,6 +45,12 @@ namespace WeAreTheChampions
             this.hsbRed = new System.Windows.Forms.HScrollBar();
             this.txtColorName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Red = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Green = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Blue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColors)).BeginInit();
             this.gbBackgroundColor.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +63,12 @@ namespace WeAreTheChampions
             this.dgvColors.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvColors.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgvColors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvColors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Color,
+            this.Red,
+            this.Green,
+            this.Blue});
             this.dgvColors.Location = new System.Drawing.Point(12, 21);
             this.dgvColors.Name = "dgvColors";
             this.dgvColors.ReadOnly = true;
@@ -222,11 +234,57 @@ namespace WeAreTheChampions
             this.label1.TabIndex = 0;
             this.label1.Text = "Color Name";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Uighur", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 411);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 23);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "You should set color before \"Edit\" ";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "ColorName";
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            // 
+            // Red
+            // 
+            this.Red.DataPropertyName = "Red";
+            this.Red.HeaderText = "Red";
+            this.Red.Name = "Red";
+            this.Red.ReadOnly = true;
+            // 
+            // Green
+            // 
+            this.Green.DataPropertyName = "Green";
+            this.Green.HeaderText = "Green";
+            this.Green.Name = "Green";
+            this.Green.ReadOnly = true;
+            // 
+            // Blue
+            // 
+            this.Blue.DataPropertyName = "Blue";
+            this.Blue.HeaderText = "Blue";
+            this.Blue.Name = "Blue";
+            this.Blue.ReadOnly = true;
+            // 
             // Colors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 427);
+            this.ClientSize = new System.Drawing.Size(751, 440);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.gbBackgroundColor);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEdit);
@@ -243,6 +301,7 @@ namespace WeAreTheChampions
             this.gbBackgroundColor.ResumeLayout(false);
             this.gbBackgroundColor.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -263,5 +322,11 @@ namespace WeAreTheChampions
         private System.Windows.Forms.HScrollBar hsbRed;
         private System.Windows.Forms.TextBox txtColorName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Red;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Green;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Blue;
     }
 }
